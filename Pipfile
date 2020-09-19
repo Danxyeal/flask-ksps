@@ -9,6 +9,7 @@ verify_ssl = true
 flask-mongoengine = "*"
 flask = "*"
 mongoengine = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
