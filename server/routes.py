@@ -1,15 +1,21 @@
 from server import app, db
+from server.models import ProductScrape
+from flask import request, json
 
 @app.route('/')
 @app.route('/index')
 def index():
     return 'Hello Flask'
 
-@app.route('/*')
+'''
+@app.route('*')
 def not_found():
     return redirect(url_for('home'))
+    '''
 
-class Product(db.Document):
-    part_id = db.IntField(unique=True)
-    vendor_id = db.StringField()
+@app.route('/scrape')
+def scrape():
+    ProductScrape(part_id=2, vendor_id='1A', scraped_url='https://www.company.com', raw_text='specs specs more specs').save()
+    scraped_specs = ProductScrape.objects.all()
+    return 'Scrape OK'
 
