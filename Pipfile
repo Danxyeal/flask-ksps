@@ -10,6 +10,7 @@ flask-mongoengine = "*"
 flask = "*"
 mongoengine = "*"
 python-dotenv = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
